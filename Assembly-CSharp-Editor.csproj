@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{198EBCB6-761B-C4ED-8276-186C7AD0BF32}</ProjectGuid>
+    <ProjectGuid>{AE329601-2D8B-55D8-017B-2F4B54E17E2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -66,16 +66,16 @@
     <Compile Include="Assets\DynamicCSharp\Scripts\Editor\PlatformChecker.cs" />
     <Compile Include="Assets\DynamicCSharp\Scripts\Editor\SettingsWindow.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -324,13 +324,13 @@
       <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="mcs">
-      <HintPath>/Users/kang/Desktop/CodingGame/Assets/DynamicCSharp/Plugin/mcs.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Assets/DynamicCSharp/Plugin/mcs.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>/Users/kang/Desktop/CodingGame/Assets/DynamicCSharp/Plugin/Mono.Cecil.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Assets/DynamicCSharp/Plugin/Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="EditorDesignerUI">
-      <HintPath>/Users/kang/Desktop/CodingGame/Assets/DynamicCSharp/Plugin/Editor/EditorDesignerUI.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Assets/DynamicCSharp/Plugin/Editor/EditorDesignerUI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/kang/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -386,7 +386,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{9FCBA719-4072-58CB-57DA-B152AF96A550}</Project>
+      <Project>{46AEF726-7AF9-FCC5-D8A1-B449DD1A32C5}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

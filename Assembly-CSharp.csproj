@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{9FCBA719-4072-58CB-57DA-B152AF96A550}</ProjectGuid>
+    <ProjectGuid>{46AEF726-7AF9-FCC5-D8A1-B449DD1A32C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -98,16 +98,16 @@
     <None Include="Assets\DynamicCSharp\Plugin\mcs-Licence.txt" />
     <None Include="Assets\DynamicCSharp\Resources\DynamicCSharp_EvalTemplate.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/kang/Desktop/CodingGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -311,10 +311,10 @@
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="mcs">
-      <HintPath>/Users/kang/Desktop/CodingGame/Assets/DynamicCSharp/Plugin/mcs.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Assets/DynamicCSharp/Plugin/mcs.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>/Users/kang/Desktop/CodingGame/Assets/DynamicCSharp/Plugin/Mono.Cecil.dll</HintPath>
+      <HintPath>/Users/kang/Desktop/CodingGame/RealtimeCoding/Assets/DynamicCSharp/Plugin/Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>/Users/kang/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

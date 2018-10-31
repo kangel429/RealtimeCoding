@@ -1,2 +1,7 @@
 Base path: /Applications/Unity/Unity.app/Contents
 Cmd: initializeCompiler
+<<<<<<< HEAD
+=======
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+>>>>>>> 110d1e5422f3a9749c434cb8a764d8aa00e501c5

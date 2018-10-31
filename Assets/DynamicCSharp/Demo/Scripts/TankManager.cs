@@ -33,7 +33,7 @@ namespace DynamicCSharp.Demo
         {
             // Create our script domain
             domain = ScriptDomain.CreateDomain("ScriptDomain", true);
-            Debug.Log("dddddd");
+
             // Find start positions
             startPosition = tankObject.transform.position;
             startRotation = tankObject.transform.rotation;

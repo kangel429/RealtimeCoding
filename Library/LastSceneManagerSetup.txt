@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/DynamicCSharp/Demo/TankDemo.unity
+  isLoaded: 1
+  isActive: 1

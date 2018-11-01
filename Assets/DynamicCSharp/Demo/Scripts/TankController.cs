@@ -50,7 +50,21 @@ namespace DynamicCSharp.Demo
         /// </summary>
         [HideInInspector]
         public float rotateSpeed = 3;
+       
 
+
+        public Vector3 tank;
+        //public Vector3 tank
+        //{
+        //    get
+        //    {
+        //        return transform.position;
+        //    }
+        //    set
+        //    {
+        //        transform.position = value;
+        //    }
+        //}
         // Methods
         /// <summary>
         /// The method that must be implemented to control the tank.
@@ -69,6 +83,7 @@ namespace DynamicCSharp.Demo
             if (collider.name == "DamagedWall" || collider.name == "Wall")
                 crash = true;
         }
+
 
         /// <summary>
         /// Runs the current controlling code.
@@ -130,10 +145,13 @@ namespace DynamicCSharp.Demo
 
         private IEnumerator RunTankRoutine()
         {
+            //PlaybuttonChange pb = GameObject.Find("Play1").GetComponent<PlaybuttonChange>();
             // Call the main method
             TankMain();
-
+            Debug.Log("Ddddddd" + tank);
+            transform.Translate(tank);
             // Process all tank tasks in order
+
             while (tankTasks.Count > 0)
             {
                 // Check for a crash
@@ -141,6 +159,7 @@ namespace DynamicCSharp.Demo
                 {
                     Debug.Log("Crashed!");
                     tankTasks.Clear();
+                    Debug.Log("finish2222");
                     yield break;
                 }
 
@@ -170,6 +189,19 @@ namespace DynamicCSharp.Demo
                         }
                 }
             }
+
+
+
+            //if (pb == null ) {
+            //    Debug.Log("pb null");
+            //}else {
+            //    pb.ChangeButtonImg1();
+            //    Debug.Log("finish111111");
+
+            //}
+
+
+
         }
 
         private IEnumerator MoveRoutine(float amount)
@@ -235,6 +267,11 @@ namespace DynamicCSharp.Demo
 
             // Destroy the shell
             shell.Destroy();
+        }
+
+        public bool EndScript(){
+
+            return false;
         }
     }
 }

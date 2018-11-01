@@ -68,8 +68,10 @@ namespace DynamicCSharp.Demo
             // Strip the old controller script
             TankController old = tankObject.GetComponent<TankController>();
 
+
             if (old != null)
                 Destroy(old);
+
 
             // Reposition the tank at its start position
             RespawnTank();
@@ -107,6 +109,8 @@ namespace DynamicCSharp.Demo
             {
                 Debug.LogError("The script must inherit from 'TankController'");
             }
+
+
         }
 
         /// <summary>

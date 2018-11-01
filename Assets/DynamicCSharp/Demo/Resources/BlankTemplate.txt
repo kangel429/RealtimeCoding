@@ -7,10 +7,19 @@ class Tank : TankController
 	{
 		moveSpeed = 1;
 		rotateSpeed = 1;
+		
 	}
 
 	public override void TankMain()
 	{
 		// Todo - Add code to move that tank around the scene
+		tank.y+=1;
+Shoot();
+		tank.y+=1;
+		
+	}
+
+	public void Update(){
+            
 	}
 }

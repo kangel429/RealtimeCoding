@@ -22,6 +22,7 @@ namespace DynamicCSharp.Demo
         /// Invoked when the compile button is clicked.
         /// </summary>
         public static Action<CodeUI> onCompileClicked;
+        public static PlaybuttonChange pb;
 
         // Public
         /// <summary>
@@ -94,5 +95,10 @@ namespace DynamicCSharp.Demo
             if (onCompileClicked != null)
                 onCompileClicked(this);
         }
+
+        public static void changButtonimg() {
+            pb.ChangeButtonImg();
+        }
+
     }
 }

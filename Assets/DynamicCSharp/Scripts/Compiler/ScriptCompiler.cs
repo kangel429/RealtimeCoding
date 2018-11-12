@@ -43,6 +43,8 @@ namespace DynamicCSharp.Compiler
         private string[] errors = new string[0];
         private byte[] assemblyData = null;
         private volatile bool isCompiling = false;
+
+        private int errorLineValue;
         
         // Properties
         /// <summary>
@@ -137,8 +139,11 @@ namespace DynamicCSharp.Compiler
         /// </summary>
         public void PrintErrors()
         {
-            foreach (string error in errors)
+            foreach (string error in errors){
                 UnityEngine.Debug.LogError(error);
+
+            }
+                
         }
 
         /// <summary>
@@ -226,9 +231,16 @@ namespace DynamicCSharp.Compiler
                 {
                     // Set flag
                     successful = false;
+                    errorLineValue = err.line;
 
+                   
+                    if(err.line!=0){
+                        UnityEngine.Debug.Log("eeeeeeee" + err.line);
+                        UnityEngine.GameObject.Find("ErrorShowLine").GetComponent<UnityEngine.RectTransform>().localPosition = new UnityEngine.Vector3(0, 481f - (16f * (err.line-2)), 0);
+                    }
                     // Generate an error
                     AddError(err.errorCode, err.errorText, err.fileName, err.line, err.column);
+
                 }
             }
 
@@ -242,6 +254,13 @@ namespace DynamicCSharp.Compiler
             // Check for success
             return successful;
         }
+        public int GetErrorLineValue
+        {
+            get { return errorLineValue; }
+        }
+        //public int GetErrorLineValue(){
+        //    return errorLineValue;
+        //}
 
         /// <summary>
         /// Attempts to compile a number of C# script files asynchronously.
@@ -306,9 +325,10 @@ namespace DynamicCSharp.Compiler
 
             // Add element
             Array.Resize(ref errors, errors.Length + 1);
-
+           
             // Add to back
             errors[errors.Length - 1] = msg;
+
         }
     }
 }

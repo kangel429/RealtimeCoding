@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace DynamicCSharp.Demo
 {
@@ -19,11 +20,15 @@ namespace DynamicCSharp.Demo
         /// <summary>
         /// The shell prefab that tanks are able to shoot.
         /// </summary>
+        public string nextStage;
         public GameObject bulletObject;
         /// <summary>
         /// The tank object that can be controlled via code.
         /// </summary>
         public GameObject tankObject;
+
+        public Sprite playBuSprite;
+        public Image buttonPlayimg;
 
         // Methods
         /// <summary>
@@ -65,20 +70,25 @@ namespace DynamicCSharp.Demo
         /// <param name="source">The C# sorce code to run</param>
         public void RunTankScript(string source)
         {
-            // Strip the old controller script
-            TankController old = tankObject.GetComponent<TankController>();
+            //if (tankObject != null)
+            //{
 
-            if (old != null)
-                Destroy(old);
+                // Strip the old controller script
+                TankController old = tankObject.GetComponent<TankController>();
 
-            // Reposition the tank at its start position
-            RespawnTank();
+                if (old != null)
+                    Destroy(old);
 
+
+                // Reposition the tank at its start position
+                RespawnTank();
+            //}
             // Compile the script
             ScriptType type = domain.CompileAndLoadScriptSource(source);
 
             if (type == null)
             {
+                Debug.Log("ddddddd"+domain.GetErrorLineValue());
                 Debug.LogError("Compile failed");
                 return;
             }
@@ -96,10 +106,11 @@ namespace DynamicCSharp.Demo
                     Debug.LogError(string.Format("Failed to create an instance of '{0}'", type.RawType));
                     return;
                 }
-
                 // Assign the bullet prefab to the 'TankController' instance
-                proxy.Fields["bulletObject"] = bulletObject;    
-
+                proxy.Fields["playBuSprite"] = playBuSprite;
+                proxy.Fields["buttonPlayimg"] = buttonPlayimg;
+                proxy.Fields["bulletObject"] = bulletObject;
+                proxy.Fields["nextStage"] = nextStage;
                 // Call the run tank method
                 proxy.Call("RunTank");
             }
@@ -114,8 +125,11 @@ namespace DynamicCSharp.Demo
         /// </summary>
         public void RespawnTank()
         {
-            tankObject.transform.position = startPosition;
+            //if (tankObject != null)
+            //{
+                tankObject.transform.position = startPosition;
             tankObject.transform.rotation = startRotation;
+            //}
         }
     }
 }

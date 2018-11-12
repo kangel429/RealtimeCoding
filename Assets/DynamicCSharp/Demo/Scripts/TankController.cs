@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 namespace DynamicCSharp.Demo
 {
     internal enum TankEventType
@@ -9,6 +10,7 @@ namespace DynamicCSharp.Demo
         Rotate,
         Move,
         Shoot,
+        HorizonMove,
     }
 
     internal struct TankEvent
@@ -50,8 +52,10 @@ namespace DynamicCSharp.Demo
         /// </summary>
         [HideInInspector]
         public float rotateSpeed = 3;
-       
 
+        public Sprite playBuSprite;
+        public Image buttonPlayimg;
+        public string nextStage;
 
         public Vector3 tank;
         //public Vector3 tank
@@ -82,6 +86,9 @@ namespace DynamicCSharp.Demo
             // Check for crashed into walls
             if (collider.name == "DamagedWall" || collider.name == "Wall")
                 crash = true;
+            if (collider.tag == "Goal" ){
+                SceneManager.LoadScene(nextStage);
+            }
         }
 
 
@@ -92,7 +99,8 @@ namespace DynamicCSharp.Demo
         {
             // Start the routine
             StartCoroutine(RunTankRoutine());
-        }        
+        }     
+
 
         /// <summary>
         /// Move the tank forward by the specified amount.
@@ -103,7 +111,11 @@ namespace DynamicCSharp.Demo
             // Add a move forward task
             tankTasks.Enqueue(new TankEvent(TankEventType.Move, amount));
         }
-
+        public void HorizonMoveForward(float amount = 1)
+        {
+            // Add a move forward task
+            tankTasks.Enqueue(new TankEvent(TankEventType.HorizonMove, amount));
+        }
         /// <summary>
         /// Move the tank backward by the specified amount.
         /// </summary>
@@ -137,19 +149,36 @@ namespace DynamicCSharp.Demo
         /// <summary>
         /// Fire a projectile from the tank.
         /// </summary>
-        public void Shoot()
+        public void Shoot(float amount = 0)
         {
             // Add a shoot event
-            tankTasks.Enqueue(new TankEvent(TankEventType.Shoot));
+            tankTasks.Enqueue(new TankEvent(TankEventType.Shoot, amount));
         }
-
+        float xx = 0;
+        float yy = 0;
         private IEnumerator RunTankRoutine()
         {
-            //PlaybuttonChange pb = GameObject.Find("Play1").GetComponent<PlaybuttonChange>();
             // Call the main method
             TankMain();
             Debug.Log("Ddddddd" + tank);
-            transform.Translate(tank);
+
+
+            if(tank.y != yy)
+            {
+                yield return StartCoroutine(MoveRoutine(tank.y));
+                tank.y = yy;
+            }
+
+            if (tank.x != xx)
+            {
+                yield return StartCoroutine(HorizontalMoveRoutine(tank.x));
+                tank.x = xx;
+            }
+
+
+            //transform.Translate(tank);
+            //transform.position = Vector2.MoveTowards(transform.position, tank, 2);
+
             // Process all tank tasks in order
 
             while (tankTasks.Count > 0)
@@ -159,7 +188,7 @@ namespace DynamicCSharp.Demo
                 {
                     Debug.Log("Crashed!");
                     tankTasks.Clear();
-                    Debug.Log("finish2222");
+                    buttonPlayimg.sprite = playBuSprite;
                     yield break;
                 }
 
@@ -174,7 +203,12 @@ namespace DynamicCSharp.Demo
                             yield return StartCoroutine(MoveRoutine(e.eventValue));
                             break;
                         }
-
+                    case TankEventType.HorizonMove:
+                        {
+                            // Move the tank
+                            yield return StartCoroutine(HorizontalMoveRoutine(e.eventValue));
+                            break;
+                        }
                     case TankEventType.Rotate:
                         {
                             // Rotate the tank
@@ -184,22 +218,15 @@ namespace DynamicCSharp.Demo
 
                     case TankEventType.Shoot:
                         {
-                            yield return StartCoroutine(ShootRoutine());
+                            yield return StartCoroutine(ShootRoutine(e.eventValue));
                             break;
                         }
                 }
             }
 
+            buttonPlayimg.sprite = playBuSprite;
 
-
-            //if (pb == null ) {
-            //    Debug.Log("pb null");
-            //}else {
-            //    pb.ChangeButtonImg1();
-            //    Debug.Log("finish111111");
-
-            //}
-
+            //transform.Translate(new Vector3(0, 0, 0));
 
 
         }
@@ -207,17 +234,36 @@ namespace DynamicCSharp.Demo
         private IEnumerator MoveRoutine(float amount)
         {
             // Get the target position
-            Vector2 destination = transform.position + (transform.up * amount);
+            Vector2 destination = transform.localPosition + (transform.up * amount);
             
             // Loop until we reach our target
-            while(Vector2.Distance(transform.position, destination) > 0.05f)
+            while(Vector2.Distance(transform.localPosition, destination) > 0f)
             {
                 // Check for a crash
                 if (crash == true)
                     yield break;
 
                 // Move towards the target
-                transform.position = Vector2.MoveTowards(transform.position, destination, Time.deltaTime * moveSpeed);
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, destination, Time.deltaTime * moveSpeed);
+
+                // Wait for next frame
+                yield return null;
+            }
+        }
+        private IEnumerator HorizontalMoveRoutine(float amount)
+        {
+            // Get the target position
+            Vector2 destination = transform.localPosition + (transform.right * amount);
+
+            // Loop until we reach our target
+            while (Vector2.Distance(transform.localPosition, destination) > 0f)
+            {
+                // Check for a crash
+                if (crash == true)
+                    yield break;
+
+                // Move towards the target
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, destination, Time.deltaTime * moveSpeed);
 
                 // Wait for next frame
                 yield return null;
@@ -251,9 +297,9 @@ namespace DynamicCSharp.Demo
             }
         }
 
-        private IEnumerator ShootRoutine()
+        private IEnumerator ShootRoutine(float vv)
         {
-            Vector2 startPos = transform.position + (transform.up * 0.8f);
+            Vector2 startPos = transform.position+ new Vector3(vv,0,0) + (transform.up * 0.8f);
 
             // Fire a shell
             TankShell shell = TankShell.Shoot(bulletObject, startPos, transform.up);
@@ -269,9 +315,5 @@ namespace DynamicCSharp.Demo
             shell.Destroy();
         }
 
-        public bool EndScript(){
-
-            return false;
-        }
     }
 }

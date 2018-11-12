@@ -67,6 +67,7 @@ namespace DynamicCSharp.Demo
             CodeUI.onCompileClicked += (CodeUI ui) =>
             {
                 // Try to run the script
+                Debug.Log("ddddddd");
                 StartCoroutine(RunTankScript(ui.codeEditor.text));
             };
         }

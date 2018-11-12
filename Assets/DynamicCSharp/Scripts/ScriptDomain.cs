@@ -563,5 +563,10 @@ namespace DynamicCSharp
 
             return domain;
         }
+        public int GetErrorLineValue()
+        {
+            Debug.Log("KKKKK" + compilerService.GetErrorLineValue);
+            return compilerService.GetErrorLineValue;
+        }
     }
 }

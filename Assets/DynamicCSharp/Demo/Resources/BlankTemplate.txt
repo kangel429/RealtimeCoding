@@ -8,18 +8,24 @@ class Tank : TankController
 		moveSpeed = 1;
 		rotateSpeed = 1;
 		
+		
 	}
 
 	public override void TankMain()
 	{
 		// Todo - Add code to move that tank around the scene
-		tank.y+=1;
-Shoot();
-		tank.y+=1;
+		for(int i=0; i<1; i++){
+			//Shoot(i);
+			MoveForward(3);
+			//HorizonMoveForward(1);
+
+		}
+		//transform.localPosition = new Vector3(0,0,0);
+
 		
 	}
 
 	public void Update(){
-            
+	//tank.x+=0.01f;
 	}
 }

@@ -58,6 +58,8 @@ namespace DynamicCSharp.Demo
         public string nextStage;
 
         public Vector3 tank;
+
+        bool crashEnemy = false;
         //public Vector3 tank
         //{
         //    get
@@ -87,7 +89,15 @@ namespace DynamicCSharp.Demo
             if (collider.name == "DamagedWall" || collider.name == "Wall")
                 crash = true;
             if (collider.tag == "Goal" ){
+
                 SceneManager.LoadScene(nextStage);
+            }
+
+            if (collider.tag == "enemy")
+            {
+                crashEnemy = true;
+
+
             }
         }
 
@@ -99,9 +109,13 @@ namespace DynamicCSharp.Demo
         {
             // Start the routine
             StartCoroutine(RunTankRoutine());
-        }     
+        }
 
-
+        public bool TellCrash()
+        {
+            // Add a move forward task
+            return crashEnemy;
+        }
         /// <summary>
         /// Move the tank forward by the specified amount.
         /// </summary>

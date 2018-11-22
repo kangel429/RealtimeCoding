@@ -31,6 +31,7 @@ namespace DynamicCSharp
         internal static ScriptDomain Active
         {
             get { return domain; }
+            set { domain = value; }
         }
 
         internal ScriptCompiler CompilerService

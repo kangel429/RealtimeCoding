@@ -73,7 +73,7 @@ namespace DynamicCSharp.Demo
         /// </summary>
         public void OnShowHelpClicked()
         {
-            helpObject.SetActive(true);
+            //helpObject.SetActive(true);
             codeEditorObject.SetActive(false);
         }
 
@@ -82,7 +82,7 @@ namespace DynamicCSharp.Demo
         /// </summary>
         public void OnHideHelpClicked()
         {
-            helpObject.SetActive(false);
+            //helpObject.SetActive(false);
             codeEditorObject.SetActive(true);
         }
 

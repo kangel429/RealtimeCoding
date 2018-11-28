@@ -90,7 +90,7 @@ namespace DynamicCSharp
         /// <returns>An instance of <see cref="ScriptProxy"/></returns>
         public ScriptProxy CreateInstance(GameObject parent = null)
         {
-            if (IsMonoBehaviour == true)
+            if (IsMonoBehaviour == true && parent!= null)
             {
                 // Create a component instance
                 return CreateBehaviourInstance(parent);
@@ -114,7 +114,7 @@ namespace DynamicCSharp
         /// <returns>An instance of <see cref="ScriptProxy"/></returns>
         public ScriptProxy CreateInstance(GameObject parent = null, params object[] parameters)
         {
-            if (IsMonoBehaviour == true)
+            if (IsMonoBehaviour == true && parent != null)
             {
                 // Create a component instance
                 return CreateBehaviourInstance(parent);

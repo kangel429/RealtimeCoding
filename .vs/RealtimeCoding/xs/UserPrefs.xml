@@ -1,25 +1,32 @@
 ﻿<Properties StartupConfiguration="{46AEF726-7AF9-FCC5-D8A1-B449DD1A32C5}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DynamicCSharp/Demo/Scripts/TankController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DynamicCSharp/Demo/Resources/ExampleTemplate.txt">
     <Files>
-      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankManager.cs" Line="23" Column="33" />
-      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankManagerAsync.cs" Line="81" Column="36" />
-      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankController.cs" Line="160" Column="13" />
+      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankManager.cs" Line="34" Column="8" />
+      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankManagerAsync.cs" Line="47" Column="47" />
+      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankController.cs" Line="316" Column="55" />
       <File FileName="Assets/Script/SceneButton.cs" Line="19" Column="43" />
       <File FileName="Assets/Script/GameStartManager.cs" Line="18" Column="34" />
       <File FileName="Assets/DynamicCSharp/Scripts/Compiler/ScriptCompiler.cs" Line="236" Column="20" />
-      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankShell.cs" Line="74" Column="9" />
-      <File FileName="Assets/DynamicCSharp/Demo/Scripts/CodeUI.cs" Line="79" Column="9" />
-      <File FileName="Assets/DynamicCSharp/Scripts/Compiler/McsCompiler.cs" Line="1" Column="1" />
-      <File FileName="Assets/DynamicCSharp/Scripts/ScriptDomain.cs" Line="569" Column="53" />
-      <File FileName="Assets/DynamicCSharp/Scripts/ScriptAssembly.cs" Line="40" Column="32" />
-      <File FileName="Assets/DynamicCSharp/Scripts/ScriptType.cs" Line="343" Column="16" />
-      <File FileName="Assets/DynamicCSharp/Scripts/ScriptProxy.cs" Line="46" Column="28" />
+      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankShell.cs" Line="19" Column="27" />
+      <File FileName="Assets/DynamicCSharp/Demo/Scripts/CodeUI.cs" Line="50" Column="9" />
+      <File FileName="Assets/DynamicCSharp/Scripts/Compiler/McsCompiler.cs" Line="212" Column="84" />
+      <File FileName="Assets/DynamicCSharp/Scripts/ScriptDomain.cs" Line="34" Column="33" />
+      <File FileName="Assets/DynamicCSharp/Scripts/ScriptAssembly.cs" Line="38" Column="1" />
+      <File FileName="Assets/DynamicCSharp/Scripts/ScriptType.cs" Line="96" Column="47" />
+      <File FileName="Assets/DynamicCSharp/Scripts/ScriptProxy.cs" Line="17" Column="24" />
       <File FileName="Assets/PlaybuttonChange.cs" Line="4" Column="21" />
       <File FileName="Assets/DynamicCSharp/Scripts/AsyncCompileLoadOperation.cs" Line="1" Column="1" />
-      <File FileName="Assets/DynamicCSharp/Scripts/ScriptMemberProxy.cs" Line="44" Column="17" />
+      <File FileName="Assets/DynamicCSharp/Scripts/ScriptMemberProxy.cs" Line="44" Column="1" />
       <File FileName="Assets/DynamicCSharp/Scripts/ScriptEvaluator.cs" Line="1" Column="1" />
       <File FileName="Assets/DynamicCSharp/Scripts/Variable.cs" Line="1" Column="1" />
+      <File FileName="Assets/DynamicCSharp/Scripts/Compiler/AsyncCompileOperation.cs" Line="1" Column="1" />
+      <File FileName="Assets/DynamicCSharp/Scripts/Compiler/McsDriver.cs" Line="1" Column="1" />
+      <File FileName="Assets/DynamicCSharp/Demo/ExampleScripts/CreateDomainExample.cs" Line="1" Column="1" />
+      <File FileName="Assets/DynamicCSharp/Demo/Resources/BlankTemplate.txt" Line="16" Column="11" />
+      <File FileName="Assets/DynamicCSharp/Demo/ExampleScripts/LoadScriptExample.cs" Line="1" Column="1" />
+      <File FileName="Assets/DynamicCSharp/Scripts/Editor/PlatformChecker.cs" Line="22" Column="28" />
+      <File FileName="Assets/DynamicCSharp/Demo/Resources/ExampleTemplate.txt" Line="16" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

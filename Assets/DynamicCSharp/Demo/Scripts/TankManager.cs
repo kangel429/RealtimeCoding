@@ -30,12 +30,17 @@ namespace DynamicCSharp.Demo
         public Sprite playBuSprite;
         public Image buttonPlayimg;
 
+
+       
+
+
         // Methods
         /// <summary>
         /// Called by Unity.
         /// </summary>
         public void Awake()
         {
+<<<<<<< HEAD
             // Create our script domain
             
             // if (ScriptDomain.Active == null) {
@@ -67,6 +72,17 @@ namespace DynamicCSharp.Demo
 
 
 
+=======
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 30;
+            //if(ScriptDomain.Active== null){
+
+        //    Debug.Log("333333333333");
+        //}
+
+        // Create our script domain
+        domain = ScriptDomain.CreateDomain("ScriptDomain", true);
+>>>>>>> fda064c3d34162cb2dfacb40923617a958089789
 
             // Find start positions
             startPosition = tankObject.transform.position;
@@ -75,6 +91,9 @@ namespace DynamicCSharp.Demo
             // Add listener for new button
             CodeUI.onNewClicked += (CodeUI ui) =>
             {
+                Debug.Log("ddddddddd");
+
+
                 // Load new file
                 ui.codeEditor.text = Resources.Load<TextAsset>(newTemplate).text;
             };
@@ -91,6 +110,7 @@ namespace DynamicCSharp.Demo
                 // Try to run the script
                 RunTankScript(ui.codeEditor.text);
             };
+
         }
 
         /// <summary>
@@ -99,6 +119,7 @@ namespace DynamicCSharp.Demo
         /// <param name="source">The C# sorce code to run</param>
         public void RunTankScript(string source)
         {
+<<<<<<< HEAD
             //if (tankObject != null)
             //{
                 if (tankObject.GetComponent<TankController>() == null ){
@@ -112,26 +133,39 @@ namespace DynamicCSharp.Demo
                     Debug.Log(" tank not null ");
                 }
                
+=======
+            if (tankObject != null)
+            {
+
+>>>>>>> fda064c3d34162cb2dfacb40923617a958089789
                 // Strip the old controller script
                 
 
+<<<<<<< HEAD
 
                 // Reposition the tank at its start position
                 
             //}
+=======
+            // Reposition the tank at its start position
+                RespawnTank();
+
+            }
+>>>>>>> fda064c3d34162cb2dfacb40923617a958089789
             // Compile the script
             ScriptType type = domain.CompileAndLoadScriptSource(source);
 
             if (type == null)
             {
-                Debug.Log("ddddddd"+domain.GetErrorLineValue());
+                Debug.Log("1111"+domain.GetErrorLineValue());
                 Debug.LogError("Compile failed");
                 return;
             }
 
             // Make sure the type inherits from 'TankController'
-            if (type.IsSubtypeOf<TankController>() == true)
+            if (type.IsSubtypeOf<TankController>() == true && tankObject != null)
             {
+
                 // Attach the component to the object
                 ScriptProxy proxy = type.CreateInstance(tankObject);
 
@@ -152,7 +186,10 @@ namespace DynamicCSharp.Demo
             }
             else
             {
-                Debug.LogError("The script must inherit from 'TankController'");
+                //if(tankObject != null){
+                //    Debug.LogError("The script must inherit from 'TankController'");
+                //}
+
             }
         }
 
@@ -161,11 +198,9 @@ namespace DynamicCSharp.Demo
         /// </summary>
         public void RespawnTank()
         {
-            //if (tankObject != null)
-            //{
-                tankObject.transform.position = startPosition;
+            tankObject.transform.position = startPosition;
             tankObject.transform.rotation = startRotation;
-            //}
+
         }
     }
 }

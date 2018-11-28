@@ -2024,6 +2024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 309673228}
   - component: {fileID: 309673229}
+  - component: {fileID: 309673230}
   m_Layer: 0
   m_Name: GroundTile 19
   m_TagString: Goal
@@ -2090,6 +2091,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &309673230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 309673227}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &324728089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9819,7 +9845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325df6488f480544fa02e8bfaa1aa473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextStage: TutorialScene2
+  nextStage: TutorialScene3
   bulletObject: {fileID: 164806, guid: 9f606848c0827b74d82463f6ba99e8d7, type: 2}
   tankObject: {fileID: 59297874}
   playBuSprite: {fileID: 21300000, guid: 225b552bda98d454891ed1dfb01d9af2, type: 3}

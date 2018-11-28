@@ -13,13 +13,19 @@ class Tank : TankController
 
 	public override void TankMain()
 	{
+   
 		// Todo - Add code to move that tank around the scene
-		for(int i=0; i<1; i++){
-			//Shoot(i);
-			MoveForward(3);
-			//HorizonMoveForward(1);
+		for(int i=0; i<4; i++){
+             Shoot(0);
+            MoveForward(1);
+            RotateCounterClockwise(-90);
+            if(i==1)Shoot(0);
+            MoveForward(1);
+            RotateCounterClockwise(90);
+            
+        }
 
-		}
+	
 		//transform.localPosition = new Vector3(0,0,0);
 
 		
@@ -27,5 +33,6 @@ class Tank : TankController
 
 	public void Update(){
 	//tank.x+=0.01f;
+   // Debug.Log(TellCrash());
 	}
 }

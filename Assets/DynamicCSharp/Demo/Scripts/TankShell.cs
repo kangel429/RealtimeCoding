@@ -8,7 +8,7 @@ namespace DynamicCSharp.Demo
     public class TankShell : MonoBehaviour
     {
         // Private
-        private Vector2 startPosition = Vector2.zero;
+        private Vector2 startPosition = new Vector2(-3,-2);
         private Vector2 heading = Vector2.zero;
         private bool hit = false;
 
@@ -16,7 +16,7 @@ namespace DynamicCSharp.Demo
         /// <summary>
         /// How fast the shell moves.
         /// </summary>
-        public float speed = 2;
+        public float speed = 20;
 
         // Methods
         /// <summary>
@@ -30,7 +30,7 @@ namespace DynamicCSharp.Demo
                 return true;
 
             // Failsafe - if the bullet goes too far then mark it as dead to avoid an infinite wait
-            if (Vector2.Distance(startPosition, transform.position) > 20)
+            if (Vector2.Distance(startPosition, transform.position) > 5)
                 hit = true;
 
             // Move the bullet

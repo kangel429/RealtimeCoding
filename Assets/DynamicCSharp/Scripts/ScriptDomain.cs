@@ -26,6 +26,12 @@ namespace DynamicCSharp
         private AppDomain sandbox = null;
         private AssemblyChecker checker = null;
         private ScriptCompiler compilerService = null;
+        private static GameObject tann = null;
+        internal static GameObject tannobj
+        {
+            get { return tann; }
+            set { tann = value; }
+        }
 
         // Properties
         internal static ScriptDomain Active
@@ -33,7 +39,7 @@ namespace DynamicCSharp
             get { return domain; }
             set { domain = value; }
         }
-
+      
         internal ScriptCompiler CompilerService
         {
             get { return compilerService; }
@@ -548,7 +554,7 @@ namespace DynamicCSharp
             if (compilerService == null)
                 throw new Exception("The compiler service has not been initialized");
         }
-
+       
         /// <summary>
         /// Creates a new <see cref="ScriptDomain"/> into which assemblies and scripts may be loaded.
         /// </summary>
@@ -569,5 +575,7 @@ namespace DynamicCSharp
             Debug.Log("KKKKK" + compilerService.GetErrorLineValue);
             return compilerService.GetErrorLineValue;
         }
+
     }
+
 }

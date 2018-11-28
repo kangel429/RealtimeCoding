@@ -581,6 +581,7 @@ PlayerSettings:
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform:
+    Android: 1
     Standalone: 1
     WebGL: 1
   m_RenderingPath: 1
@@ -654,9 +655,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: a85c708f-e2eb-4ad5-b296-9cf54d4c4865
+  cloudProjectId: c0ea63ea-b742-4bb6-b911-bbad42c8a9bc
   projectName: CodingGame
-  organizationId: kangel4299
+  organizationId: wldnt18
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

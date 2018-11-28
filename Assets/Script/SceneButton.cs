@@ -15,7 +15,7 @@ public class SceneButton : MonoBehaviour {
     }
 	
 	public void NextStage(string nextScene) {
-      
+        
         SceneManager.LoadScene(nextScene);
 
     }

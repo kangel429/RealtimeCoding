@@ -175,8 +175,7 @@ namespace DynamicCSharp.Demo
             // Call the main method
             TankMain();
             Debug.Log("Ddddddd" + tank);
-
-
+         
             if(tank.y != yy)
             {
                 yield return StartCoroutine(MoveRoutine(tank.y));
@@ -237,7 +236,9 @@ namespace DynamicCSharp.Demo
                         }
                 }
             }
+          
 
+            
             buttonPlayimg.sprite = playBuSprite;
 
             //transform.Translate(new Vector3(0, 0, 0));

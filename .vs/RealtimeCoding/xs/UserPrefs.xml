@@ -1,14 +1,14 @@
-﻿<Properties StartupConfiguration="{46AEF726-7AF9-FCC5-D8A1-B449DD1A32C5}|">
+﻿<Properties>
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DynamicCSharp/Demo/Resources/ExampleTemplate.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DynamicCSharp/Demo/Scripts/TankManager.cs">
     <Files>
       <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankManager.cs" Line="34" Column="8" />
       <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankManagerAsync.cs" Line="47" Column="47" />
-      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankController.cs" Line="316" Column="55" />
+      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankController.cs" Line="311" Column="14" />
       <File FileName="Assets/Script/SceneButton.cs" Line="19" Column="43" />
       <File FileName="Assets/Script/GameStartManager.cs" Line="18" Column="34" />
       <File FileName="Assets/DynamicCSharp/Scripts/Compiler/ScriptCompiler.cs" Line="236" Column="20" />
-      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankShell.cs" Line="19" Column="27" />
+      <File FileName="Assets/DynamicCSharp/Demo/Scripts/TankShell.cs" Line="82" Column="38" />
       <File FileName="Assets/DynamicCSharp/Demo/Scripts/CodeUI.cs" Line="50" Column="9" />
       <File FileName="Assets/DynamicCSharp/Scripts/Compiler/McsCompiler.cs" Line="212" Column="84" />
       <File FileName="Assets/DynamicCSharp/Scripts/ScriptDomain.cs" Line="34" Column="33" />
@@ -23,10 +23,10 @@
       <File FileName="Assets/DynamicCSharp/Scripts/Compiler/AsyncCompileOperation.cs" Line="1" Column="1" />
       <File FileName="Assets/DynamicCSharp/Scripts/Compiler/McsDriver.cs" Line="1" Column="1" />
       <File FileName="Assets/DynamicCSharp/Demo/ExampleScripts/CreateDomainExample.cs" Line="1" Column="1" />
-      <File FileName="Assets/DynamicCSharp/Demo/Resources/BlankTemplate.txt" Line="16" Column="11" />
+      <File FileName="Assets/DynamicCSharp/Demo/Resources/BlankTemplate.txt" Line="25" Column="13" />
       <File FileName="Assets/DynamicCSharp/Demo/ExampleScripts/LoadScriptExample.cs" Line="1" Column="1" />
       <File FileName="Assets/DynamicCSharp/Scripts/Editor/PlatformChecker.cs" Line="22" Column="28" />
-      <File FileName="Assets/DynamicCSharp/Demo/Resources/ExampleTemplate.txt" Line="16" Column="3" />
+      <File FileName="Assets/DynamicCSharp/Demo/Resources/ExampleTemplate.txt" Line="18" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

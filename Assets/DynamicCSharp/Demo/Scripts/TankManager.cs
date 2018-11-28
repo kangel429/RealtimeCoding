@@ -37,7 +37,36 @@ namespace DynamicCSharp.Demo
         public void Awake()
         {
             // Create our script domain
+            
+            // if (ScriptDomain.Active == null) {
+            //     Debug.Log(" Domain Active null");
+            //     domain = ScriptDomain.CreateDomain("ScriptDomain", true);
+                
+            // }else {
+            //     // ScriptDomain.reset();
+             
+            // //    domain = ScriptDomain.CreateDomain("ScriptDomain", true);
+            //     // domain = ScriptDomain.CreateDomain("ScriptDomain", true);
+            //     Debug.Log(" Domain Active not null");
+            // }
+            if (tankObject == null ) {
+                Debug.Log(" tttttt null ");
+            }else {
+                Debug.Log(" tttttt not null ");
+            }
+
+           
             domain = ScriptDomain.CreateDomain("ScriptDomain", true);
+            
+            // if (ScriptDomain.sandx == null) {
+            //     domain = ScriptDomain.CreateDomain("ScriptDomain", true);
+            //     Debug.Log(" sand box null");
+            // }else {
+            //     Debug.Log(" snad box not null");
+            // }
+
+
+
 
             // Find start positions
             startPosition = tankObject.transform.position;
@@ -72,16 +101,23 @@ namespace DynamicCSharp.Demo
         {
             //if (tankObject != null)
             //{
+                if (tankObject.GetComponent<TankController>() == null ){
+                    Debug.Log(" tank null ");
+                }else {
+                         TankController old = tankObject.GetComponent<TankController>();
 
+                    if (old != null)
+                        Destroy(old);
+                    RespawnTank();
+                    Debug.Log(" tank not null ");
+                }
+               
                 // Strip the old controller script
-                TankController old = tankObject.GetComponent<TankController>();
-
-                if (old != null)
-                    Destroy(old);
+                
 
 
                 // Reposition the tank at its start position
-                RespawnTank();
+                
             //}
             // Compile the script
             ScriptType type = domain.CompileAndLoadScriptSource(source);
